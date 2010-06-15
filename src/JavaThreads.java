@@ -4,8 +4,12 @@ public class JavaThreads {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("JavaThreads");
+		Runnable r = new Runnable() {
+			  public void run() {
+				  System.out.println("JavaThreads");
+			  }
+		};
+		r.run();
 	}
 
 }
