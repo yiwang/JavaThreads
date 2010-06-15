@@ -33,10 +33,18 @@ public class JavaThreads {
 		  }
 		};
 		
+		/*
 		r2.run();
 		System.out.println("post r2");
 		r1.run();
 		System.out.println("post r1");
+		//*/
+		
+		Thread thr1 = new Thread(r1);
+		Thread thr2 = new Thread(r2);
+		thr1.start();
+		thr2.start();
+
 	}
 
 }
