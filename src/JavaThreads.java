@@ -10,6 +10,33 @@ public class JavaThreads {
 			  }
 		};
 		r.run();
+		
+		Runnable r1 = new Runnable() {
+			  public void run() {
+			    try {
+			      while (true) {
+			        System.out.println("Hello, world!");
+			        Thread.sleep(1000L);
+			      }
+			    } catch (InterruptedException iex) {}
+			  }
+		};
+		Runnable r2 = new Runnable() {
+		  public void run() {
+		    try {
+		      while (true) {
+		        System.out.println("Goodbye, " +
+				"cruel world!");
+		        Thread.sleep(2000L);
+		      }
+		    } catch (InterruptedException iex) {}
+		  }
+		};
+		
+		r2.run();
+		System.out.println("post r2");
+		r1.run();
+		System.out.println("post r1");
 	}
 
 }
